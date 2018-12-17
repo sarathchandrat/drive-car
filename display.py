@@ -4,15 +4,21 @@ from PyQt4 import QtGui
 def window():
    app = QtGui.QApplication(sys.argv)
    w = QtGui.QWidget()
-   b = QtGui.QLabel(w)
-   b.setText("Hello World!")
-   c=QtGui.QPushButton(w)
-   c.setText('start')
-   w.setGeometry(100,100,200,50)
-   b.move(10,10)
+   c=QtGui.QPushButton('on',w)
+   c.setCheckable(False)
+   c.toggle()
+   #c.setText('start')
+   w.setGeometry(0,0,200,200)
+   #b.move(10,10)
    c.move(10,30)
    w.setWindowTitle("Drivig")
    w.show()
+   sys.exit(app.exec_())
+   if c.isChecked():
+       print('the button is checked')
+   else:
+       print('the button is not checked')
+      #c.toggle()
    sys.exit(app.exec_())
 
    '''
