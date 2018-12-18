@@ -1,5 +1,7 @@
 import sys
 from PyQt4 import QtGui
+def x():
+    print('button pressed')
 
 def window():
    app = QtGui.QApplication(sys.argv)
@@ -9,16 +11,12 @@ def window():
    c.toggle()
    #c.setText('start')
    w.setGeometry(0,0,200,200)
-   #b.move(10,10)
+   #b.move(10,10) 
    c.move(10,30)
    w.setWindowTitle("Drivig")
    w.show()
-   sys.exit(app.exec_())
-   if c.isChecked():
-       print('the button is checked')
-   else:
-       print('the button is not checked')
-      #c.toggle()
+   c.clicked[bool].connect(x)
+    #c.toggle()
    sys.exit(app.exec_())
 
    '''
