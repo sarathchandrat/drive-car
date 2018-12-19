@@ -1,33 +1,36 @@
 import sys
 from PyQt4 import QtGui
+window_properties={'window_height':500,'window_width':200,'window_Title':'Command Control'}
 def x():
     print('button pressed')
-
 def window():
-   app = QtGui.QApplication(sys.argv)
-   w = QtGui.QWidget()
-   c=QtGui.QPushButton('on',w)
-   c.setCheckable(False)
-   c.toggle()
-   #c.setText('start')
-   w.setGeometry(0,0,200,200)
-   #b.move(10,10) 
-   c.move(10,30)
-   w.setWindowTitle("Drivig")
-   w.show()
-   c.clicked[bool].connect(x)
+    global window_properties
+    app = QtGui.QApplication(sys.argv)
+    w = QtGui.QWidget()
+    w.setGeometry(0,0,window_properties['window_height'],window_properties['window_width'])
+    w.setWindowTitle(window_properties['window_Title'])
+    motor_off_on=QtGui.QPushButton('on',w)
+    motor_off_on.setCheckable(True)
+    motor_off_on.move(400,10)
+    motor_clockwise=QtGui.QPushButton('clockwise',w)
+    motor_clockwise.setCheckable(True)
+    motor_clockwise.move
     #c.toggle()
-   sys.exit(app.exec_())
-
-   '''
-   w = QtGui.QWidget()
-   b = QtGui.QLabel(w)
-   b.setText("Hello World!")
-   w.setGeometry(100,100,200,50)
-   b.move(50,20)
-   w.setWindowTitle("Drivig")
-   w.show()
-   sys.exit(app.exec_())
-   '''
+    #c.setText('start')
+    #b.move(10,10)
+    w.show()
+    motor_off_on.clicked[bool].connect(x)
+    #c.toggle()
+    sys.exit(app.exec_())
+    '''
+    w = QtGui.QWidget()
+    b = QtGui.QLabel(w)
+    b.setText("Hello World!")
+    w.setGeometry(100,100,200,50)
+    b.move(50,20)
+    w.setWindowTitle("Drivig")
+    w.show()
+    sys.exit(app.exec_())
+    '''
 if __name__ == '__main__':
-   window()
+    window()
