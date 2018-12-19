@@ -1,6 +1,6 @@
 import sys
 from PyQt4 import QtGui
-from PyQt4 import Qtcore
+from PyQt4 import QtCore
 window_properties={'window_height':500,'window_width':200,'window_Title':'Command Control'}
 def x():
     print('button pressed')
@@ -34,11 +34,11 @@ def window():
     right_turn=QtGui.QPushButton('right',w)
     right_turn.setCheckable(True)
     right_turn.move(185,60)
-
+    '''
     motor_magnitude=QtGui.QSlider(Qt.vertical,w)
     motor_magnitude.setMinimum(0)
     motor_magnitude.setMaximum(10)
-
+    '''
 
 
     #c.toggle()
