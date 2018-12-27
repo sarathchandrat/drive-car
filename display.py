@@ -128,6 +128,7 @@ class sliderdemo(QWidget):
         self.motor_anti_clockwise.clicked[bool].connect(self.motor_wheeldirection)
         self.left_turn.clicked[bool].connect(self.turn_direction)
         self.right_turn.clicked[bool].connect(self.turn_direction)
+        self.stop.clicked[bool].connect(self.complete_stop)
         self.sl.valueChanged.connect(self.valuechange)
         self.setWindowTitle("Driving application")
     def valuechange(self):
@@ -159,7 +160,8 @@ class sliderdemo(QWidget):
             self.right_turn.toggle()
         elif source.text()=='right' and self.left_turn.isChecked():
             self.left_turn.toggle()
-
+    def complete_stop(self):
+        
 
 
 def main():
