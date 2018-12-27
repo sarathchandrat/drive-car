@@ -123,7 +123,11 @@ class sliderdemo(QWidget):
         self.sl.setTickInterval(1)
         self.sl.move(380,60)
         self.sl.setEnabled(False)
-        self. motor_off_on.clicked[bool].connect(self.valuechange)
+        self.motor_off_on.clicked[bool].connect(self.valuechange)
+        self.motor_clockwise.clicked[bool].connect(self.motor_wheeldirection)
+        self.motor_anti_clockwise.clicked[bool].connect(self.motor_wheeldirection)
+        self.left_turn.clicked[bool].connect(self.turn_direction)
+        self.right_turn.clicked[bool].connect(self.turn_direction)
         self.sl.valueChanged.connect(self.valuechange)
         self.setWindowTitle("Driving application")
     def valuechange(self):
@@ -143,7 +147,19 @@ class sliderdemo(QWidget):
             self.right_turn.setEnabled(False)
             self.sl.setEnabled(False)
             self.stop.setEnabled(False)
-           #print('the motor is off')
+    def motor_wheeldirection(self):
+        source=self.sender()
+        if source.text()=='clockwise' and self.motor_anti_clockwise.isChecked():
+            self.motor_anti_clockwise.toggle()
+        elif source.text()=='anti clockwise' and self.motor_clockwise.isChecked():
+            self.motor_clockwise.toggle()
+    def turn_direction(self):
+        source=self.sender()
+        if source.text()=='left' and self.right_turn.isChecked():
+            self.right_turn.toggle()
+        elif source.text()=='right' and self.left_turn.isChecked():
+            self.left_turn.toggle()
+
 
 
 def main():
