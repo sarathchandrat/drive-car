@@ -159,6 +159,8 @@ class sliderdemo(QWidget):
             self.motor_anti_clockwise.toggle()
         elif source.text()=='anti clockwise' and self.motor_clockwise.isChecked():
             self.motor_clockwise.toggle()
+        elif source.text()=='clockwise':
+                print('the motor must move in forward direction')
     def turn_direction(self):
         source=self.sender()
         if source.text()=='left' and self.right_turn.isChecked():
@@ -172,7 +174,7 @@ class sliderdemo(QWidget):
         self.left_turn.setChecked(False)
         self.right_turn.setChecked(False)
         self.sl.setValue(0)
-        
+
 
 def main():
    app = QApplication(sys.argv)
