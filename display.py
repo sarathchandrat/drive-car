@@ -105,7 +105,7 @@ class sliderdemo(QWidget):
 
         self.stop=QPushButton('stop',self)
         self.stop.setEnabled(False)
-        self.stop.setCheckable(True)
+        self.stop.setCheckable(False)
         self.stop.setFixedSize(40,25)
         self.stop.move(100,60)
 
@@ -141,6 +141,11 @@ class sliderdemo(QWidget):
             self.sl.setEnabled(True)
             self.stop.setEnabled(True)
         else:
+            self.motor_clockwise.setChecked(False)
+            self.motor_anti_clockwise.setChecked(False)
+            self.left_turn.setChecked(False)
+            self.right_turn.setChecked(False)
+            self.sl.setValue(0)
             self.motor_clockwise.setEnabled(False)
             self.motor_clockwise.setEnabled(False)
             self.motor_anti_clockwise.setEnabled(False)
@@ -160,9 +165,14 @@ class sliderdemo(QWidget):
             self.right_turn.toggle()
         elif source.text()=='right' and self.left_turn.isChecked():
             self.left_turn.toggle()
-    def complete_stop(self):
+    def complete_stop(self,pressed):
+        print(pressed)
+        self.motor_clockwise.setChecked(False)
+        self.motor_anti_clockwise.setChecked(False)
+        self.left_turn.setChecked(False)
+        self.right_turn.setChecked(False)
+        self.sl.setValue(0)
         
-
 
 def main():
    app = QApplication(sys.argv)
