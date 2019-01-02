@@ -1,0 +1,2 @@
+orange colors and (yellow) will go to the gpio of the raspberry pi
+grey colors and (green and red ) will go to the motor
