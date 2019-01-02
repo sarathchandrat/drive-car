@@ -1,2 +1,14 @@
-orange colors and (yellow) will go to the gpio of the raspberry pi
-grey colors and (green and red ) will go to the motor
+from power terminal side
+M1-IN
+  white pin---first motor in to gpio 16
+  brown pin--second motor in to gpio 18
+M1-OUT
+  brown pin--first motor out to motor negative
+  green pin--second motor out to motor positive
+M2-IN
+  orange pin---first motor in to gpio
+  green pin--second motor in to gpio
+M2-OUT
+  brown pin--first motor out to motor negative
+  red pin--second motor out to motor positive
+  
