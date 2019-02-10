@@ -171,7 +171,7 @@ class sliderdemo(QWidget):
         elif source.text()=='right' and self.left_turn.isChecked():
             self.left_turn.toggle()
     def complete_stop(self,pressed):
-        print(pressed)
+        #print(pressed)
         self.motor_clockwise.setChecked(False)
         self.motor_anti_clockwise.setChecked(False)
         self.left_turn.setChecked(False)
