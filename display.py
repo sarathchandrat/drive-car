@@ -4,7 +4,7 @@
 # from main import press
 # window_properties={'window_height':500,'window_width':200,'window_Title':'Command Control'}
 # def x():
-#     print('button pressed')
+     print('button pressed')
 # def window():
 #     global window_properties
 #     app = QtGui.QApplication(sys.argv)
